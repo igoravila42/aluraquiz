@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     font-family: 'Lato', sans-serif;
-    color: ${({ theme }) => theme.colors.complementary};
+    color: ${({ theme }) => theme.colors.contrastText};
   }
   html, body {
     min-height: 100vh;
