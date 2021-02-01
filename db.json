@@ -116,7 +116,7 @@
       }
     ],
     "external": [
-      ""
+      "https://aluraquiz-base.alura-challenges.vercel.app/"
     ],
     "theme": {
       "colors": {

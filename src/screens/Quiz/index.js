@@ -1,15 +1,16 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 
-import db from '../db.json';
-import Widget from '../src/components/Widget';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizLogo from '../src/components/QuizLogo';
-import Button from '../src/components/Button';
-import QuizContainer from '../src/components/QuizContainer';
-import GitHubCorner from '../src/components/GitHubCorner';
-import AlternativesForm from '../src/components/AlternativesForm';
-import LoadingScreen from '../src/components/LoadingScreen';
+import Widget from '../../components/Widget';
+import QuizBackground from '../../components/QuizBackground';
+import QuizLogo from '../../components/QuizLogo';
+import Button from '../../components/Button';
+import QuizContainer from '../../components/QuizContainer';
+import GitHubCorner from '../../components/GitHubCorner';
+import AlternativesForm from '../../components/AlternativesForm';
+import LoadingScreen from '../../components/LoadingScreen';
+import BackLinkArrow from '../../components/BackLinkArrow';
 
 function ResultWidget({ results }) {
   return (
@@ -62,11 +63,12 @@ function QuestionWidget({
   const questionId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
+  const [selectedAlternativeIndex, setSelectedAlternativeIndex] = React.useState(undefined);
 
   return (
     <Widget>
       <Widget.Header>
-        {/* BackLinkArrow href ="/" */}
+        <BackLinkArrow href="/" />
         <h3>
           {`Question ${questionIndex + 1} of ${totalQuestions}`}
         </h3>
@@ -97,6 +99,7 @@ function QuestionWidget({
               onSubmit();
               setIsQuestionSubmited(false);
               setSelectedAlternative(undefined);
+              setSelectedAlternativeIndex(undefined);
             }, 3 * 1000);
           }}
         >
@@ -116,7 +119,12 @@ function QuestionWidget({
                   style={{ display: 'none' }}
                   id={alternativeId}
                   name={questionId}
-                  onChange={() => setSelectedAlternative(alternativeIndex)}
+                  onChange={() => {
+                    setSelectedAlternative(alternativeIndex);
+                    setSelectedAlternativeIndex(alternativeIndex);
+                  }}
+                  value={alternativeIndex}
+                  checked={false}
                   type="radio"
                 />
                 {alternative}
@@ -141,13 +149,14 @@ const screenStates = {
   RESULT: 'RESULT',
 };
 
-export default function QuizPage() {
+export default function QuizPage({ externalQuestions, externalBg }) {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const [results, setResults] = React.useState([]);
-  const totalQuestions = db.questions.length;
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
-  const question = db.questions[questionIndex];
+  const question = externalQuestions[questionIndex];
+  const totalQuestions = externalQuestions.length;
+  const bg = externalBg;
 
   function addResult(result) {
     setResults([
@@ -172,17 +181,17 @@ export default function QuizPage() {
   }
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <QuizBackground backgroundImage={bg}>
       <QuizContainer>
         <QuizLogo />
         {screenState === screenStates.QUIZ && (
-          <QuestionWidget
-            question={question}
-            questionIndex={questionIndex}
-            totalQuestions={totalQuestions}
-            onSubmit={handleSubmitQuiz}
-            addResult={addResult}
-          />
+        <QuestionWidget
+          question={question}
+          questionIndex={questionIndex}
+          totalQuestions={totalQuestions}
+          onSubmit={handleSubmitQuiz}
+          addResult={addResult}
+        />
         )}
 
         {screenState === screenStates.LOADING && <LoadingScreen />}
