@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Lottie } from '@crello/react-lottie';
 
 import db from '../../db.json';
 import Widget from '../../src/components/Widget';
@@ -11,8 +12,8 @@ import Button from '../../src/components/Button';
 import QuizContainer from '../../src/components/QuizContainer';
 import GitHubCorner from '../../src/components/GitHubCorner';
 import AlternativesForm from '../../src/components/AlternativesForm';
-import LoadingScreen from '../../src/components/LoadingScreen';
 import BackLinkArrow from '../../src/components/BackLinkArrow';
+import loadingAnimation from '../../src/components/Animations/loading.json';
 
 function ResultWidget({ results }) {
   return (
@@ -48,6 +49,25 @@ function ResultWidget({ results }) {
             </li>
           ))}
         </ul>
+      </Widget.Content>
+    </Widget>
+  );
+}
+
+function LoadingWidget() {
+  return (
+    <Widget>
+      <Widget.Header>
+        Loading
+      </Widget.Header>
+
+      <Widget.Content style={{ display: 'flex', justifyContent: 'center' }}>
+        <Lottie
+          width="200px"
+          height="200px"
+          className="lottie-container basic"
+          config={{ animationData: loadingAnimation, loop: true, autoplay: true }}
+        />
       </Widget.Content>
     </Widget>
   );
@@ -204,7 +224,7 @@ export default function QuizPage() {
           />
         )}
 
-        {screenState === screenStates.LOADING && <LoadingScreen />}
+        {screenState === screenStates.LOADING && <LoadingWidget />}
 
         {screenState === screenStates.RESULT && <ResultWidget results={results} />}
       </QuizContainer>
