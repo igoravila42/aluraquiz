@@ -1,29 +1,117 @@
   
 {
     "bg": "https://i.pinimg.com/originals/9c/19/74/9c19744d5204799dd343696ce4656548.jpg",
-    "title": "Quiz CSS da Alura",
-    "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+    "title": "Dark Souls Quiz",
+    "description": "Test your knowledge about the Dark Souls series",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
-        "description": "Essa é pra aquecer",
-        "answer": 2,
+        "image": "https://i.kym-cdn.com/photos/images/newsfeed/001/120/331/e3e.png",
+        "title": "What drop do you get from Havel the Rock if you kill him?",
+        "answer": 0,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "Havel's Ring",
+          "Titanite Shard",
+          "Havel's Armor",
+          "Gold Pine Resin"
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
+        "image": "data:image/jpeg;base64,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",
+        "title": "What is Solaire looking for throughout the game?",
         "answer": 0,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+           "His own personal sun",
+           "A specific weapon",
+           "His family",
+           "Time off"
+        ]
+      },
+      {
+        "image": "https://soulslore.wdfiles.com/local--resized-images/data:sens-fortress/2015-09-26_00008.jpg/medium.jpg",
+        "title": "What sorcerer is trapped in the cage hanging in Sen's Fortress?",
+        "answer": 1,
+        "alternatives": [
+          "Griggs of Vinheim",
+          "Big Hat Logan",
+          "Oswald of Carim",
+          "Siegmeyer of Catarina"
+        ]
+      },
+      {
+        "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/640921d0-b17c-4495-b965-8ccd4efb4d6c/d4hwauh-7a37cfcf-9f72-45c4-b98e-ba1e326e0b1f.jpg/v1/fill/w_1600,h_958,q_75,strp/tomb_of_giants_by_sstarkm_d4hwauh-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD05NTgiLCJwYXRoIjoiXC9mXC82NDA5MjFkMC1iMTdjLTQ0OTUtYjk2NS04Y2NkNGVmYjRkNmNcL2Q0aHdhdWgtN2EzN2NmY2YtOWY3Mi00NWM0LWI5OGUtYmExZTMyNmUwYjFmLmpwZyIsIndpZHRoIjoiPD0xNjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.VSQkb0YBTnbtZFKMrVBO9WyCC4XSswOQ5Z7LNXsYt3w",
+        "title": "What's the name of the thief who tries to get you to look over the ledge in The Tomb of Giants, claiming there's plenty of loot down there?",
+        "answer": 2,
+        "alternatives": [
+          "Knight Lautrec",
+          "Andre of Astora",
+          "Patches the Hyena",
+          "Rickert of Vinheim"
+        ]
+      },
+      {
+        "image": "https://giantbomb1.cbsistatic.com/uploads/scale_medium/3/33880/1724829-ds14.jpg",
+        "title": "If you are in human form while near the bonfire in Blighttown, what NPC invades your world, wielding a Butcher's Knife?",
+        "answer": 2,
+        "alternatives": [
+          "Maneater Mildred",
+          "Laurentius of the Great Swamp",
+          "Knight Kirk",
+          "Dusk of Oolacile"
+        ]
+      },
+      {
+        "image": "https://i.ytimg.com/vi/7XeVhFvwWuc/maxresdefault.jpg",
+        "title": "What is the boss's name in The Painted World of Ariamis?",
+        "answer": 0,
+        "alternatives": [
+          "Stray Demon",
+          "Priscilla the Crossbreed",
+          "Gwyn",
+          "Capra"
+        ]
+      },
+      {
+        "image": "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Boss_0019_Pinwheel.jpg",
+        "title": "Who is the NPC that you can summon in the Catacombs to help fight Pinwheel?",
+        "answer": 1,
+        "alternatives": [
+          "Paladin Leeroy",
+          "Lautrec",
+          "Knight Kirk",
+          "Solaire"
+        ]
+      },
+      {
+        "image": "https://i.ytimg.com/vi/EbWsCAIZRJ8/maxresdefault.jpg",
+        "title": "Who appears at Firelink after you ring the two Bells of Awakening?",
+        "answer": 2,
+        "alternatives": [
+          "Crestfallen Warrior",
+          "Kingseeker Frampt",
+          "Andre of Astora",
+          "Sieglinde of Catarina"
+        ]
+      },
+      {
+        "image": "https://www.co-optimus.com/images/upload/image/reviews/DarkSouls3/DarkSouls3-CoopFAQ%20(7).jpg",
+        "title": "Who is the only boss in the game that is also a summonable character in a different boss battle?",
+        "answer": 2,
+        "alternatives": [
+          "Gaping Dragon",
+          "Great Wolf Sif",
+          "Taurus Demon",
+          "Ornstein & Smough"
+        ]
+      },
+      {
+        "image": "https://i.pinimg.com/originals/d3/57/db/d357dbed368c53a4c2de53159f9ca295.jpg",
+        "title": "What two boss battles can you summon Witch Beatrice for help with?",
+        "answer": 2,
+        "alternatives": [
+          "Taurus and Capra",
+          "Quelaag and Ceaseless Discharge",
+          "Gaping Dragon and Belltower Garloyles",
+          "Moonlight Butterfly and Four Kings"
         ]
       }
     ],
